@@ -1,10 +1,13 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
 
 import Services from '../../Services/Services';
 
@@ -14,7 +17,7 @@ const Home = () => {
 
     return (
         <div>
-            <div class="card mb-3">
+            <div class="card mb-3 border-0">
                 <div class="row g-0">
 
                     <div class="col-md-6 mt-5">
@@ -38,7 +41,7 @@ const Home = () => {
                 }
             </CardGroup>
             <div className="text-center">
-                <Button variant="danger" size="lg">See All</Button>
+                <Link to='/services' ><Button variant="danger" size="lg">See All</Button></Link>
             </div>
 
             <Container className="mt-5" >
@@ -54,7 +57,100 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
+
+
+            <Container className="mt-5" >
+                <Row>
+                    <Col xs={6} md={6}>
+                        <div className='mt-5 p-5 mx-5'>
+                            <h1 className='mt-5 p-3 display-5'>Hire The Chef</h1>
+                            <p>You can hire our chef for big events. As Our chef is a trained professional cook and tradesman who is proficient in all aspects of food preparation he will make your events
+                                more delicious and yummy!So, dont hesitate hire now! </p>
+
+                            <Button>Hire Now</Button>
+                        </div>
+                    </Col>
+                    <Col xs={12} md={6}>
+                        <img style={{ height: '500px' }} src='3.PNG' alt='' />
+                    </Col>
+
+                </Row>
+            </Container>
+
+
+
+            <footer class="bg-light text-center text-white">
+
+                <div class="container p-4 pb-0">
+
+                    {/* <section class="mb-4">
+
+                        <a
+                            class="btn text-white btn-floating m-1"
+                            style={{ backgroundColor: "#3b5998", }}
+                            href="#!"
+                            role="button"
+                        ><i class="fa fa-facebook-f"></i
+                        ></a>
+
+
+                        <a
+                            class="btn text-white btn-floating m-1"
+
+                            style={{ backgroundColor: "#55acee", }}
+                            href="#!"
+                            role="button"
+                        ><FontAwesomeIcon icon={['fab', 'apple']} /></a>
+
+                        <a
+                            class="btn text-white btn-floating m-1"
+
+                            style={{ backgroundColor: "#dd4b39", }}
+                            href="#!"
+                            role="button"
+                        ><i class="fab fa-google"></i
+                        ></a>
+
+
+                        <a
+                            class="btn text-white btn-floating m-1"
+                            style={{ backgroundColor: "#ac2bac", }}
+                            href="#!"
+                            role="button"
+                        ><i class="fab fa-instagram"></i
+                        ></a>
+
+                        <a
+                            class="btn text-white btn-floating m-1"
+
+                            style={{ backgroundColor: "#0082ca", }}
+                            href="#!"
+                            role="button"
+                        ><i class="fa fab fa-linkedin-in"></i
+                        ></a>
+
+                        <a
+                            class="btn text-white btn-floating m-1"
+
+                            style={{ backgroundColor: " #333333", }}
+                            href="#!"
+                            role="button"
+                        ><i class="fa fab fa-github"></i
+                        ></a> */}
+                    {/* </section> */}
+
+                </div>
+
+
+
+                <div class="text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                    © 2020 Copyright:
+                    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                </div>
+
+            </footer >
         </div >
+
     );
 };
 

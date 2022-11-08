@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Services = ({ service }) => {
 
@@ -9,7 +10,12 @@ const Services = ({ service }) => {
     return (
         <div>
             <Card style={{ width: '25rem' }} className="m-5" >
-                <Card.Img style={{ height: '250px' }} variant="top" src={img} />
+                <PhotoProvider>
+                    <PhotoView src={img}>
+                        <Card.Img style={{ height: '250px' }} variant="top" src={img} />
+                    </PhotoView>
+                </PhotoProvider>
+
                 <Card.Body>
                     <Card.Title>{item}</Card.Title>
                     <Card.Text>
@@ -20,7 +26,7 @@ const Services = ({ service }) => {
 
                     </div>
 
-                    <Link to={`/course/${_id}`}> <Button variant="primary">View Details</Button></Link>
+                    <Link to={`/services/${_id}`}> <Button variant="primary">View Details</Button></Link>
                 </Card.Body>
             </Card>
         </div>
