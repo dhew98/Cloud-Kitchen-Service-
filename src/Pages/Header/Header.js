@@ -22,7 +22,7 @@ const Header = () => {
 
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+            <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container>
                     <Navbar.Brand > <h3> <img style={{ height: '50px' }} src='https://img.freepik.com/premium-vector/chef-icon-with-tray-food-hand_602006-191.jpg' alt='' /> <Link style={{ textDecoration: "None", color: "black" }} to='/' >Jawad's Recipe</Link></h3>  </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
