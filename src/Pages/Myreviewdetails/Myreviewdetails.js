@@ -14,12 +14,11 @@ const Myreviewdetails = ({ rev, handleDelete, review, setreview }) => {
     const { customer, message, rating, img, serviceName, _id } = rev
     const [show, setShow] = useState(false);
 
-    const [updateReview, setupdateReview] = useState('')
+    const [updateReview, setupdateReview] = useState("")
 
     const handleReview = event => {
         event.preventDefault();
-        const form = event.target;
-        const update = form.message;
+        const update = event.target.message;
         setupdateReview(update);
     }
 
@@ -32,7 +31,7 @@ const Myreviewdetails = ({ rev, handleDelete, review, setreview }) => {
 
     const handleStatusUpdate = id => {
         setShow(true)
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`http://localhost:5000/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -89,29 +88,31 @@ const Myreviewdetails = ({ rev, handleDelete, review, setreview }) => {
 
                 </div>
             </div>
+            <Form onSubmit={handleReview}>
 
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Edit Your Review</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
+                <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Edit Your Review</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                            <Form.Label>Comments</Form.Label>
+                            <Form.Control name="message" as="textarea" rows={3} />
+                        </Form.Group>
+                        {/* <textarea onChange={handleReview}></textarea> */}
 
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Comments</Form.Label>
-                        <Form.Control name="message" as="textarea" rows={3} />
-                    </Form.Group>
+                    </Modal.Body>
 
-                </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                            Close
+                        </Button>
 
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
+                        <Button variant="primary" onClick={handleClose}> Save Changes </Button>
 
-                    <Button variant="primary" onClick={handleClose}> Save Changes </Button>
-
-                </Modal.Footer>
-            </Modal>
+                    </Modal.Footer>
+                </Modal>
+            </Form>
 
 
         </div >
