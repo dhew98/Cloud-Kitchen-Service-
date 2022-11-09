@@ -10,6 +10,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 
 
 import Services from '../Services/Services';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
 
@@ -22,7 +23,7 @@ const Home = () => {
 
                     <div class="col-md-6 mt-5">
                         <div class="card-body mt-5 mx-5 p-5">
-                            <h1 class="card-title display-2">Welcome to Jawad's Recipe</h1>
+                            <h1 class="card-title display-2">Welcome to Jawad's Cuisine</h1>
                             <p class="card-text fs-4">Prepare Meals According to Your Choice  <br /> and Dietary Preference</p>
                         </div>
                     </div>
@@ -51,7 +52,7 @@ const Home = () => {
                     </Col>
                     <Col xs={6} md={6}>
                         <div className='mt-5 p-5'>
-                            <h1 className='mt-5 p-3 display-5'>About Chef</h1>
+                            <h1 className='mt-5 p-3 display-5 fw-bold'>About Chef</h1>
                             <p>Our chef is a trained professional cook and tradesman who is proficient in all aspects of food preparation. Our chef create a bridge between the traditional and foreign foods and bringing intense excitement , banalanced flavours and testy cuisines.</p>
                         </div>
                     </Col>
@@ -63,7 +64,7 @@ const Home = () => {
                 <Row>
                     <Col xs={6} md={6}>
                         <div className='mt-5 p-5 mx-5'>
-                            <h1 className='mt-5 p-3 display-5'>Hire The Chef</h1>
+                            <h1 className='mt-5 p-3 display-5 fw-bold'>Hire The Chef</h1>
                             <p>You can hire our chef for big events. As Our chef is a trained professional cook and tradesman who is proficient in all aspects of food preparation he will make your events
                                 more delicious and yummy!So, dont hesitate hire now! </p>
 
@@ -79,76 +80,7 @@ const Home = () => {
 
 
 
-            <footer class="bg-light text-center text-white">
-
-                <div class="container p-4 pb-0">
-
-                    {/* <section class="mb-4">
-
-                        <a
-                            class="btn text-white btn-floating m-1"
-                            style={{ backgroundColor: "#3b5998", }}
-                            href="#!"
-                            role="button"
-                        ><i class="fa fa-facebook-f"></i
-                        ></a>
-
-
-                        <a
-                            class="btn text-white btn-floating m-1"
-
-                            style={{ backgroundColor: "#55acee", }}
-                            href="#!"
-                            role="button"
-                        ><FontAwesomeIcon icon={['fab', 'apple']} /></a>
-
-                        <a
-                            class="btn text-white btn-floating m-1"
-
-                            style={{ backgroundColor: "#dd4b39", }}
-                            href="#!"
-                            role="button"
-                        ><i class="fab fa-google"></i
-                        ></a>
-
-
-                        <a
-                            class="btn text-white btn-floating m-1"
-                            style={{ backgroundColor: "#ac2bac", }}
-                            href="#!"
-                            role="button"
-                        ><i class="fab fa-instagram"></i
-                        ></a>
-
-                        <a
-                            class="btn text-white btn-floating m-1"
-
-                            style={{ backgroundColor: "#0082ca", }}
-                            href="#!"
-                            role="button"
-                        ><i class="fa fab fa-linkedin-in"></i
-                        ></a>
-
-                        <a
-                            class="btn text-white btn-floating m-1"
-
-                            style={{ backgroundColor: " #333333", }}
-                            href="#!"
-                            role="button"
-                        ><i class="fa fab fa-github"></i
-                        ></a> */}
-                    {/* </section> */}
-
-                </div>
-
-
-
-                <div class="text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-                    © 2020 Copyright:
-                    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-                </div>
-
-            </footer >
+            <Footer></Footer>
         </div >
 
     );

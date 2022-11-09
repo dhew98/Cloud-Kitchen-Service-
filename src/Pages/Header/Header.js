@@ -24,7 +24,7 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container>
-                    <Navbar.Brand > <h3> <img style={{ height: '50px' }} src='https://img.freepik.com/premium-vector/chef-icon-with-tray-food-hand_602006-191.jpg' alt='' /> <Link style={{ textDecoration: "None", color: "black" }} to='/' >Jawad's Recipe</Link></h3>  </Navbar.Brand>
+                    <Navbar.Brand > <h3> <img style={{ height: '70px' }} src='https://img.freepik.com/premium-vector/chef-icon-with-tray-food-hand_602006-191.jpg' alt='' /> <Link style={{ textDecoration: "None", color: "black" }} to='/' >Jawad's Cuisine</Link></h3>  </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
@@ -62,7 +62,7 @@ const Header = () => {
                             {user?.photoURL ?
                                 <><Image
                                     roundedCircle
-                                    style={{ height: '50px' }}
+                                    style={{ height: '60px' }}
                                     src={user?.photoURL} data-tip data-for='userName' referrerPolicy="no-referrer" >
 
                                 </Image>

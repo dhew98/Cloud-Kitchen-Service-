@@ -4,6 +4,7 @@ import Main from "../../layouts/Main";
 import AddReview from "../../Pages/AddReview/AddReview ";
 import AddServices from "../../Pages/AddServices/AddServices";
 import Allservice from "../../Pages/Allservice/Allservice";
+import Blog from "../../Pages/Blog/Blog";
 import Header from "../../Pages/Header/Header";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
@@ -59,7 +60,13 @@ const router = createBrowserRouter(
                     path: '/addService',
                     element: <PrivateRoute><AddServices></AddServices></PrivateRoute>,
 
+                },
+                {
+                    path: '/blog',
+                    element: <Blog></Blog>,
+
                 }
+
             ]
         }
     ]
