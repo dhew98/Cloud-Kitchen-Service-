@@ -14,7 +14,7 @@ const AddReview = () => {
     const handleReview = event => {
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
+        const name = user?.displayName;
         const rate = form.rate.value;
         const email = user?.email || 'unregistered';
         const img = user?.photoURL;
@@ -55,7 +55,7 @@ const AddReview = () => {
             <Form onSubmit={handleReview}>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Name</Form.Label>
-                    <Form.Control name="name" type="text" placeholder="Enter Your Name" />
+                    <Form.Control defaultValue={user?.displayName} type="text" placeholder="Enter Your Name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Email address</Form.Label>

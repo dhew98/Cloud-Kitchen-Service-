@@ -7,6 +7,7 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [review, setreview] = useState([])
     const [loading, setLoading] = useState(true);
 
 
@@ -66,6 +67,8 @@ const AuthProvider = ({ children }) => {
 
     const authInfo = {
         user,
+        review,
+        setreview,
         loading,
         setLoading,
         providerLogin,
