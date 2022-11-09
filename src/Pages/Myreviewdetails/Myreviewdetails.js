@@ -18,9 +18,11 @@ const Myreviewdetails = ({ rev, handleDelete, review, setreview }) => {
 
     const handleReview = event => {
         event.preventDefault();
-        const update = event.target.message;
-        setupdateReview(update);
+        const form = event.target;
+        const message = form.message.value;
+        setupdateReview(message);
     }
+    const handleShow = () => setShow(true);
 
     const handleClose = () => {
         setShow(false);
@@ -30,21 +32,23 @@ const Myreviewdetails = ({ rev, handleDelete, review, setreview }) => {
     console.log("review", updateReview);
 
     const handleStatusUpdate = id => {
-        setShow(true)
+
+        setShow(false);
         fetch(`http://localhost:5000/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({ status: 'Approved' })
+            body: JSON.stringify({ message: updateReview })
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                console.log("data", data);
                 if (data.modifiedCount > 0) {
                     const remaining = review.filter(odr => odr._id !== id);
                     const approving = review.find(odr => odr._id === id);
-                    approving.status = 'Approved'
+                    approving.message
+                        = updateReview
 
                     const newOrders = [approving, ...remaining];
                     setreview(newOrders);
@@ -69,7 +73,7 @@ const Myreviewdetails = ({ rev, handleDelete, review, setreview }) => {
 
                             </div>
                             <div className="mt-3 " >
-                                <Button onClick={() => handleStatusUpdate(_id)} className='mx-3' ><FontAwesomeIcon className='text-white' icon={faUserPen} /> </Button>
+                                <Button onClick={handleShow} className='mx-3' ><FontAwesomeIcon className='text-white' icon={faUserPen} /> </Button>
                                 <Button onClick={() => handleDelete(_id)} variant='danger'><FontAwesomeIcon className='text-white' icon={faTrash} /> </Button>
                             </div>
 
@@ -88,31 +92,37 @@ const Myreviewdetails = ({ rev, handleDelete, review, setreview }) => {
 
                 </div>
             </div>
-            <Form onSubmit={handleReview}>
 
-                <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Edit Your Review</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
+
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Edit Your Review</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {/* <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                            <Form.Label>Comments</Form.Label>
+                            <Form.Control name="message" as="textarea" rows={3} />
+                        </Form.Group> */}
+                    {/* <textarea onChange={handleReview}></textarea> */}
+                    <Form onSubmit={handleReview}>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                             <Form.Label>Comments</Form.Label>
                             <Form.Control name="message" as="textarea" rows={3} />
                         </Form.Group>
-                        {/* <textarea onChange={handleReview}></textarea> */}
+                        <input className='btn btn-primary mt-2' type="submit" value="Post" />
+                    </Form>
 
-                    </Modal.Body>
 
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
-                        </Button>
+                </Modal.Body>
 
-                        <Button variant="primary" onClick={handleClose}> Save Changes </Button>
+                <Modal.Footer>
 
-                    </Modal.Footer>
-                </Modal>
-            </Form>
+
+                    <Button variant="primary" onClick={() => handleStatusUpdate(_id)}> Save Changes </Button>
+
+                </Modal.Footer>
+            </Modal>
+
 
 
         </div >
