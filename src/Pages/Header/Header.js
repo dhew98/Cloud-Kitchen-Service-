@@ -37,7 +37,7 @@ const Header = () => {
                             <Nav.Link ><Link style={{ textDecoration: "None", color: "black" }} to='/'>Home</Link></Nav.Link>
                             <Nav.Link><Link style={{ textDecoration: "None", color: "black" }} to='/services'>Services</Link></Nav.Link>
                             <Nav.Link><Link style={{ textDecoration: "None", color: "black" }} to='/blog'>Blog </Link></Nav.Link>
-                            <Nav.Link><Link style={{ textDecoration: "None", color: "black" }} to='/faq'>FAQ </Link></Nav.Link>
+
 
 
 

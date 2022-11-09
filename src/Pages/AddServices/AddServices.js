@@ -1,8 +1,9 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
+import useTitle from '../../Hooks/useTitle';
 const AddServices = () => {
 
-
+    useTitle("Add Services")
 
     const handleService = event => {
         event.preventDefault();
@@ -52,7 +53,7 @@ const AddServices = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Description</Form.Label>
-                    <Form.Control name="description" as="textarea" rows={3} />
+                    <Form.Control name="description" as="textarea" rows={3} placeholder="At least 100words" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Price</Form.Label>

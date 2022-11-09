@@ -2,9 +2,10 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Services from '../Services/Services';
+import useTitle from '../../Hooks/useTitle';
 const Allservice = () => {
     const services = useLoaderData();
-
+    useTitle("All Services")
 
     return (
         <div>

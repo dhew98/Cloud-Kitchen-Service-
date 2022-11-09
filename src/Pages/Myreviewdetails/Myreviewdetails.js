@@ -96,14 +96,11 @@ const Myreviewdetails = ({ rev, handleDelete, review, setreview }) => {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Edit Your Review</Modal.Title>
+                    <Modal.Title>Edit Your Review  </Modal.Title>
+
                 </Modal.Header>
                 <Modal.Body>
-                    {/* <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                            <Form.Label>Comments</Form.Label>
-                            <Form.Control name="message" as="textarea" rows={3} />
-                        </Form.Group> */}
-                    {/* <textarea onChange={handleReview}></textarea> */}
+
                     <Form onSubmit={handleReview}>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                             <Form.Label>Comments</Form.Label>
@@ -112,7 +109,7 @@ const Myreviewdetails = ({ rev, handleDelete, review, setreview }) => {
                         <input className='btn btn-primary mt-2' type="submit" value="Post" />
                     </Form>
 
-
+                    <small>* click the post button before Save Changes!</small>
                 </Modal.Body>
 
                 <Modal.Footer>

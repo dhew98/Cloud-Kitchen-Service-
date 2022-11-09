@@ -6,9 +6,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider'
 import { useNavigate, useLocation, Link } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 
 const Register = () => {
+    useTitle("Register");
     const [error, setError] = useState('');
     const [accepted, setAccepted] = useState(false);
     const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);

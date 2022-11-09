@@ -11,10 +11,12 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 
 import Services from '../Services/Services';
 import Footer from '../Footer/Footer';
+import useTitle from '../../Hooks/useTitle';
 
 const Home = () => {
 
     const services = useLoaderData();
+    useTitle("Home");
 
     return (
         <div>

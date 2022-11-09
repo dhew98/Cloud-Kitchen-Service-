@@ -7,11 +7,15 @@ import { GoogleAuthProvider } from 'firebase/auth'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import useTitle from '../../Hooks/useTitle';
 
 
 
 
 const Login = () => {
+
+
+    useTitle("Log In");
     const [error, setError] = useState('');
     const { signIn, setLoading, handleGoogleSignIn, handleGithubSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -50,12 +54,7 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 setError('');
-                if (user.emailVerified) {
-                    navigate(from, { replace: true });
-                }
-                else {
-                    alert("Email Not verified!");
-                }
+                navigate(from, { replace: true });
 
 
             })
