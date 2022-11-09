@@ -7,6 +7,7 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider'
 const AddReview = () => {
 
     const service = useLoaderData()
+    console.log(service)
     const { _id, item } = service;
     const { user } = useContext(AuthContext);
 
@@ -72,7 +73,7 @@ const AddReview = () => {
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
-                        <option value="4">5</option>
+                        <option value="5">5</option>
                     </select>
                 </Form.Group>
 

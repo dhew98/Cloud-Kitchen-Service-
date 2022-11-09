@@ -48,7 +48,7 @@ const ServiceDetails = () => {
                 <Reviews id={_id} />
 
                 <div className='my-5'>
-                    <Link to="/addReview" className='mt-5 mx-auto w-50'><Button variant="danger" size="lg">Add review</Button></Link>
+                    <Link to={`/addReview/${_id}`} className='mt-5 mx-auto w-50'><Button variant="danger" size="lg">Add review</Button></Link>
                 </div>
             </div>
 
