@@ -49,7 +49,7 @@ const Header = () => {
                                     <>
 
                                         <Nav.Link><Link style={{ textDecoration: "None", color: "black" }} to='/myreview'>My Reviews </Link></Nav.Link>
-                                        <Nav.Link><Link style={{ textDecoration: "None", color: "black" }} to='/addSrvice'>Add Services</Link></Nav.Link>
+                                        <Nav.Link><Link style={{ textDecoration: "None", color: "black" }} to='/addService'>Add Services</Link></Nav.Link>
                                         <Nav.Link onClick={handleLogOut}> <Button variant="danger">Log out</Button>  </Nav.Link>
 
                                     </>
