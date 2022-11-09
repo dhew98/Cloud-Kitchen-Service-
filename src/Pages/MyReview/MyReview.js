@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import Myreviewdetails from '../Myreviewdetails/Myreviewdetails';
 
 const MyReview = () => {
 
@@ -15,7 +16,8 @@ const MyReview = () => {
     console.log(review)
     return (
         <div>
-            hello {review.message}
+            <h1 className='text-center mt-5'>My Reviews</h1>
+            {review.map(rev => <Myreviewdetails key={rev._id} rev={rev}></Myreviewdetails>)}
         </div>
     );
 };
