@@ -4,21 +4,21 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, fa } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider'
 import Button from 'react-bootstrap/Button';
 import { Image } from 'react-bootstrap';
 import ReactTooltip from 'react-tooltip';
 
 
 const Header = () => {
-    // const { user, logOut } = useContext(AuthContext);
-    // const handleLogOut = () => {
-    //     logOut()
-    //         .then(() => { })
-    //         .catch(error => console.error(error))
-    // }
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
 
     return (
         <div>
@@ -43,13 +43,13 @@ const Header = () => {
 
 
 
-                            {/* 
 
                             {
                                 user?.uid ?
                                     <>
 
-
+                                        <Nav.Link><Link style={{ textDecoration: "None", color: "black" }} to='/myreview'>My Reviews </Link></Nav.Link>
+                                        <Nav.Link><Link style={{ textDecoration: "None", color: "black" }} to='/addSrvice'>Add Services</Link></Nav.Link>
                                         <Nav.Link onClick={handleLogOut}> <Button variant="danger">Log out</Button>  </Nav.Link>
 
                                     </>
@@ -68,7 +68,7 @@ const Header = () => {
                                 </Image>
                                     <ReactTooltip id='userName'>{user?.displayName}</ReactTooltip></>
                                 : <FontAwesomeIcon icon={faUser} />
-                            } */}
+                            }
 
 
 

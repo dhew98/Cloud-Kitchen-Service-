@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
 
-import Services from '../../Services/Services';
+import Services from '../Services/Services';
 
 const Home = () => {
 

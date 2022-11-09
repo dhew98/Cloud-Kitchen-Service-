@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -9,58 +9,49 @@ import { useState } from 'react';
 import Reviews from '../Reviews/Reviews';
 import ReviewDetails from '../ReviewDetails/ReviewDetails';
 
+import AddReview from '../AddReview/AddReview ';
+import Button from 'react-bootstrap/Button';
+
 const ServiceDetails = () => {
 
     const service = useLoaderData();
     const { img, item, price, description, _id } = service;
-    const [reviews, setreviews] = useState([])
-    const [reviewer, setreviewer] = useState([])
 
-    useEffect(() => {
-        fetch('http://localhost:5000/reviews')
-            .then(res => res.json())
-            .then(data => setreviews(data.review))
-    }, []);
-
-
-
-    console.log(reviews);
 
     return (
         <div>
             <Container >
-                <Row>
+                <Row className='w-75 mx-auto'>
 
-                    <Col xs={6} className='mt-2 p-5'>
+                    <Col xs={12} className='mt-2 p-5 '>
                         <Card style={{ width: '100%' }}>
-                            <Card.Img variant="top" src={img} />
                             <Card.Body>
                                 <Card.Title>{item}</Card.Title>
                             </Card.Body>
+                            <Card.Img variant="top" src={img} />
+
                         </Card>
                     </Col>
-                    <Col xs={6} className='mt-2 p-5'>
+                    <Col xs={12} className='mt-3 mx-5'>
 
-                        <div >
+                        <div>
                             <h2> Service Details </h2>
                             <p>{description}</p>
                             <p >Price : <span className='fw-bold'>{price}</span> </p>
                         </div>
 
-                        <div>
-                            <h1>Reviews</h1>
-                            {
-                                reviews.map((rev) => {
-                                    if (rev.services === _id) {
-                                        console.log(rev.services)
-                                        rev.review.map(cmnt => <ReviewDetails key={cmnt.id} cmnt={cmnt}></ReviewDetails>)
-                                    }
-                                })
-                            }
-                        </div>
                     </Col>
                 </Row>
             </Container>
+            <div className='mx-auto w-50 mt-4'>
+                <h1 className='text-center'>Review From Our Customers</h1>
+                <Reviews id={_id} />
+
+                <div className='my-5'>
+                    <Link to="/addReview" className='mt-5 mx-auto w-50'><Button variant="danger" size="lg">Add review</Button></Link>
+                </div>
+            </div>
+
         </div>
     );
 };

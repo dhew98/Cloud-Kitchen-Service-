@@ -16,10 +16,6 @@ const AuthProvider = ({ children }) => {
 
     }
 
-    const handleGithubSignIn = (Githubprovider) => {
-        return signInWithPopup(auth, Githubprovider);
-
-    }
 
 
 
@@ -79,7 +75,6 @@ const AuthProvider = ({ children }) => {
         createUser,
         signIn,
         handleGoogleSignIn,
-        handleGithubSignIn,
 
     };
 
