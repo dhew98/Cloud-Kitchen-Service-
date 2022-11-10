@@ -8,7 +8,11 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <Spinner animation="border" variant="primary" />
+        return (
+            <div claasName="position-absolute top-50 start-50" >
+                <Spinner animation="border" variant="primary" />
+            </div>
+        )
     }
 
     if (!user) {

@@ -7,15 +7,16 @@ const Blog = () => {
     useTitle("Blog")
     return (
         <div className='blog-container'>
+
             <div className='blogs'>
 
                 <div className='blog-info'>
                     <img src="https://reactjs.org/logo-og.png" alt=""></img>
                     <h3 className='activities-name'>
-                        What is cors?
+                        Difference between SQL and NoSQL
                     </h3>
                     <p className='activities-details'>
-                        Cross-origin resource sharing is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served. A web page may freely embed cross-origin images, stylesheets, scripts, iframes, and videos
+                        SQL is the programming language used to interface with relational databases. (Relational databases model data as records in rows and tables with logical links between them). NoSQL is a class of DBMs that are non-relational and generally do not use SQL.
                     </p>
 
 
@@ -27,10 +28,10 @@ const Blog = () => {
                 <div className='blog-info'>
                     <img src="https://reactjs.org/logo-og.png" alt=""></img>
                     <h3 className='activities-name'>
-                        Why are you using firebase? What other options do you have to implement authentication?
+                        What is JWT, and how does it work?
                     </h3>
                     <p className='activities-details'>
-                        Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app. It supports authentication using passwords, phone numbers, popular federated identity providers like Google, Facebook and Twitter, and more.
+                        JSON Web Token (JWT) is an open standard (RFC 7519) for securely transmitting information between parties as JSON object.It is compact, readable and digitally signed using a private key/ or a public key pair by the Identity Provider(IdP).The purpose of using JWT is not to hide data but to ensure the authenticity of the data.
                     </p>
 
 
@@ -42,10 +43,18 @@ const Blog = () => {
                 <div className='blog-info'>
                     <img src="https://reactjs.org/logo-og.png" alt=""></img>
                     <h3 className='activities-name'>
-                        How does the private route work?
+                        What is the difference between javascript and NodeJS?
                     </h3>
                     <p className='activities-details'>
-                        The react private route component renders child components (children) if the user is logged in. If not logged in the user is redirected to the /login page with the return url passed in the location state property.
+                        Javascript is a programming language that is used for writing scripts on the website.
+                        NodeJS is a Javascript runtime environment.
+                        Javascript can only be run in the browsers.	We can run Javascript outside the browser with the help of NodeJS.
+                        It is basically used on the client-side.	It is mostly used on the server-side.
+                        Javascript is capable enough to add HTML and play with the DOM.
+                        Nodejs does not have capability to add HTML tags.
+                        Javascript can run in any browser engine as like JS core in safari and Spidermonkey in Firefox.
+                        V8 is the Javascript engine inside of node.js that parses and runs Javascript.
+                        Javascript is used in frontend development.	Nodejs is used in server-side development.
                     </p>
 
 
@@ -57,10 +66,10 @@ const Blog = () => {
                 <div className='blog-info'>
                     <img src="https://reactjs.org/logo-og.png" alt=""></img>
                     <h3 className='activities-name'>
-                        What is Node? How does Node work?
+                        How does NodeJS handle multiple requests at the same time?
                     </h3>
                     <p className='activities-details'>
-                        Node.js is an open-source backend javascript runtime environment. It is a used as backend service where javascript works on the server-side of the application. This way javascript is used on both frontend and backend. Node.js runs on chrome v8 engine which converts javascript code into machine code, it is highly scalable, lightweight, fast, and data-intensive.
+                        NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them. EventLoop is the listener for the EventQueue.
                     </p>
 
 
