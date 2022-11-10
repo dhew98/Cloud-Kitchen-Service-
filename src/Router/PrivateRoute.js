@@ -9,9 +9,13 @@ const PrivateRoute = ({ children }) => {
 
     if (loading) {
         return (
-            <div claasName="position-absolute top-50 start-50" >
-                <Spinner animation="border" variant="primary" />
+
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
             </div>
+
         )
     }
 

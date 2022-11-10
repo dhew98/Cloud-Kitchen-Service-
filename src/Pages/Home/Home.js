@@ -50,9 +50,9 @@ const Home = () => {
             <Container className="mt-5" >
                 <Row>
                     <Col xs={12} md={6}>
-                        <img style={{ height: '500px' }} src='2.PNG' alt='' />
+                        <img style={{ height: '500px' }} src='2.png' alt='' />
                     </Col>
-                    <Col xs={6} md={6}>
+                    <Col xs={12} md={6}>
                         <div className='mt-5 p-5'>
                             <h1 className='mt-5 p-3 display-5 fw-bold'>About Chef</h1>
                             <p>Our chef is a trained professional cook and tradesman who is proficient in all aspects of food preparation. Our chef create a bridge between the traditional and foreign foods and bringing intense excitement , banalanced flavours and testy cuisines.</p>
@@ -64,7 +64,7 @@ const Home = () => {
 
             <Container className="mt-5" >
                 <Row>
-                    <Col xs={6} md={6}>
+                    <Col xs={12} md={6}>
                         <div className='mt-5 p-5 mx-5'>
                             <h1 className='mt-5 p-3 display-5 fw-bold'>Hire The Chef</h1>
                             <p>You can hire our chef for big events. As Our chef is a trained professional cook and tradesman who is proficient in all aspects of food preparation he will make your events
@@ -74,7 +74,7 @@ const Home = () => {
                         </div>
                     </Col>
                     <Col xs={12} md={6}>
-                        <img style={{ height: '500px' }} src='3.PNG' alt='' />
+                        <img style={{ height: '500px' }} src='3.png' alt='' />
                     </Col>
 
                 </Row>
@@ -82,7 +82,7 @@ const Home = () => {
 
 
 
-            <Footer></Footer>
+
         </div >
 
     );

@@ -1,13 +1,12 @@
-import Reac, { useContext } from 'react';
+import React, { useContext } from 'react';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider'
 
-const AddReview = () => {
+const AddReview = ({ service }) => {
 
-    const service = useLoaderData()
-    console.log(service)
+
     const { _id, item } = service;
     const { user } = useContext(AuthContext);
 
@@ -30,7 +29,7 @@ const AddReview = () => {
             message,
             img
         }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://server-six-kappa.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,7 +49,7 @@ const AddReview = () => {
 
     }
     return (
-        <div className='mt-3 w-50 mx-auto'>
+        <div className='mt-3 mx-auto'>
             <h1>Add a Review</h1>
             <Form onSubmit={handleReview}>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">

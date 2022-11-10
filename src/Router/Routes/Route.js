@@ -25,17 +25,17 @@ const router = createBrowserRouter(
                 {
                     path: '/',
                     element: <Home></Home>,
-                    loader: () => fetch("http://localhost:5000/homeService")
+                    loader: () => fetch("https://server-six-kappa.vercel.app/homeService")
                 },
                 {
                     path: '/services',
                     element: <Allservice></Allservice>,
-                    loader: () => fetch("http://localhost:5000/services")
+                    loader: () => fetch("https://server-six-kappa.vercel.app/services")
                 },
                 {
                     path: '/services/:id',
                     element: <ServiceDetails></ServiceDetails>,
-                    loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                    loader: ({ params }) => fetch(`https://server-six-kappa.vercel.app/services/${params.id}`)
 
                 },
                 {
@@ -45,11 +45,6 @@ const router = createBrowserRouter(
                 {
                     path: '/register',
                     element: <Register></Register>
-                },
-                {
-                    path: '/addReview/:id',
-                    element: <PrivateRoute> <AddReview></AddReview></PrivateRoute>,
-                    loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
                 },
                 {
                     path: '/myreview',

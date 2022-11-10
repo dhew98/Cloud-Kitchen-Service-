@@ -20,7 +20,7 @@ const AddServices = () => {
             description,
             price
         }
-        fetch('http://localhost:5000/services', {
+        fetch('https://server-six-kappa.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

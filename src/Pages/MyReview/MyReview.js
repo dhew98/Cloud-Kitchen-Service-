@@ -11,7 +11,7 @@ const MyReview = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://server-six-kappa.vercel.app/reviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setreview(data))
     }, [user?.email])
@@ -21,7 +21,7 @@ const MyReview = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this order');
         if (proceed) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://server-six-kappa.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -40,7 +40,7 @@ const MyReview = () => {
 
     console.log(review)
     return (
-        <div>
+        <div style={{ minHeight: "500px" }}>
             <h1 className='text-center mt-5'>My Reviews</h1>
 
             {review.length ? review.map(rev => <Myreviewdetails setreview={setreview} review={review} handleDelete={handleDelete} key={rev._id} rev={rev}></Myreviewdetails>) :

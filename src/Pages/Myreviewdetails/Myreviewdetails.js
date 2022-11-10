@@ -34,7 +34,7 @@ const Myreviewdetails = ({ rev, handleDelete, review, setreview }) => {
     const handleStatusUpdate = id => {
 
         setShow(false);
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://server-six-kappa.vercel.app/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -52,6 +52,7 @@ const Myreviewdetails = ({ rev, handleDelete, review, setreview }) => {
 
                     const newOrders = [approving, ...remaining];
                     setreview(newOrders);
+                    alert('Review Updated Successfully!')
 
                 }
             })
@@ -109,13 +110,13 @@ const Myreviewdetails = ({ rev, handleDelete, review, setreview }) => {
                         <input className='btn btn-primary mt-2' type="submit" value="Post" />
                     </Form>
 
-                    <small>* click the post button before Save Changes!</small>
+
                 </Modal.Body>
 
                 <Modal.Footer>
 
 
-                    <Button variant="primary" onClick={() => handleStatusUpdate(_id)}> Save Changes </Button>
+                    <Button variant="primary" onClick={() => handleStatusUpdate(_id)}> Close</Button>
 
                 </Modal.Footer>
             </Modal>
