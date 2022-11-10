@@ -42,7 +42,9 @@ const MyReview = () => {
     return (
         <div>
             <h1 className='text-center mt-5'>My Reviews</h1>
-            {review.map(rev => <Myreviewdetails setreview={setreview} review={review} handleDelete={handleDelete} key={rev._id} rev={rev}></Myreviewdetails>)}
+
+            {review.length ? review.map(rev => <Myreviewdetails setreview={setreview} review={review} handleDelete={handleDelete} key={rev._id} rev={rev}></Myreviewdetails>) :
+                <h5 className='text-center'>No review posted yet. Post some reviews!</h5>}
         </div>
     );
 };

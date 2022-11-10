@@ -22,7 +22,7 @@ const Services = ({ service }) => {
                         {description.slice(0, 100)}..
                     </Card.Text>
                     <div className='d-flex justify-content-between'>
-                        <p className='fw-bold'>{price}</p>
+                        <p className='fw-bold'>${price}</p>
 
                     </div>
 

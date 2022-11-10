@@ -37,7 +37,7 @@ const ServiceDetails = () => {
                         <div>
                             <h2> Service Details </h2>
                             <p>{description}</p>
-                            <p >Price : <span className='fw-bold'>{price}</span> </p>
+                            <p >Price : <span className='fw-bold'>${price}</span> </p>
                         </div>
 
                     </Col>
